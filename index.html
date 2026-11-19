@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minecomp — Arquitetura Computacional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="topo" class="home">
+  <button id="menu" class="mc pq" hidden>← Menu</button>
+  <span id="mini" class="mini" hidden>⛏️ Minecomp</span>
+  <div class="dir">
+    <span id="chip" class="chip"></span>
+    <button id="btn-miss" class="mc pq">🏆 Missões</button>
+    <button id="som" class="mc pq" aria-label="Ligar ou desligar o som">🔊</button>
+  </div>
+</div>
+
+<section id="home">
+  <div class="sol" aria-hidden="true"></div>
+  <div class="arv a1" aria-hidden="true"></div>
+  <div class="arv a2" aria-hidden="true"></div>
+  <div class="hero">
+    <h1 class="logo">Minecomp</h1>
+    <p class="sub">Treine Arquitetura Computacional jogando</p>
+    <div class="botoes">
+      <button id="go-cruz" class="mcb g">📝 Cruzadinha</button>
+      <button id="go-inv" class="mcb g">🎒 Inventário</button>
+      <button id="como" class="mcb">❓ Como jogar?</button>
+    </div>
+  </div>
+  <div class="chao" aria-hidden="true"></div>
+  <div class="info">
+    <b>Gustavo Henrique de Souza</b>
+    <span>01ADSB | Arquitetura Computacional | Professor: Matheus Matos</span>
+  </div>
+</section>
+
+<main hidden>
+  <section id="cruz" hidden>
+    <div class="bar">
+      <button id="conferir" class="mc">Conferir</button>
+      <button id="reiniciar" class="mc">Reiniciar</button>
+      <button id="ajuda-cruz" class="mc">❓ Ajuda</button>
+      <strong id="count">0 de 14 palavras</strong>
+    </div>
+    <div class="xp"><i id="xp-cruz"></i></div>
+    <p id="msg" role="status"></p>
+    <div class="cruz-wrap">
+      <div id="board"></div>
+      <div class="clues">
+        <h2>Horizontais</h2><ol id="clues-h"></ol>
+        <h2>Verticais</h2><ol id="clues-v"></ol>
+      </div>
+    </div>
+  </section>
+  <section id="inv" hidden>
+    <div class="bar">
+      <button id="inv-reiniciar" class="mc">Reiniciar</button>
+      <button id="ajuda-inv" class="mc">❓ Ajuda</button>
+      <strong id="inv-count"></strong>
+    </div>
+    <div class="xp"><i id="xp-inv"></i></div>
+    <div class="inv-panel">
+      <h2>Inventário</h2>
+      <div id="slots"></div>
+      <div id="dica"></div>
+      <p id="inv-msg" role="status"></p>
+    </div>
+  </section>
+</main>
+<div id="fx"></div>
+<div id="toasts"></div>
+<script src="script.js"></script>
+</body>
+</html>
