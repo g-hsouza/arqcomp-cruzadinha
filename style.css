@@ -87,3 +87,5 @@ main{max-width:1000px;margin:0 auto;padding:84px 12px 40px}
 .slot.no{animation:shake .3s;background:var(--bad)}
 .slot.hit{background:var(--ok);animation:pop .28s}
 @media(max-width:640px){#slots{grid-template-columns:repeat(4,1fr)}.mini{display:none}}
+#dica{background:#100010;color:#fff;padding:12px 14px;min-height:70px;border:3px solid #2a0a7a;box-shadow:inset 0 0 0 2px #1a0540}
+#dica small{display:block;color:#ffe14d;font:400 10px "Press Start 2P",monospace;margin-bottom:8px}
