@@ -98,6 +98,31 @@ function tom(notas,tipo="square",dur=.12){
   });
 }
 $("#som").onclick=()=>{som=!som;$("#som").textContent=som?"🔊":"🔇"};
+let bufClique;
+const somAlt=new Audio("click.m4a");
+somAlt.preload="auto";
+async function carregarClique(){
+  try{
+    ac??=new AC();
+    const r=await fetch("click.m4a");
+    bufClique=await ac.decodeAudioData(await r.arrayBuffer());
+  }catch(e){console.warn("Web Audio falhou, usando Audio:",e)}
+}
+function clique(){
+  if(!som)return;
+  if(bufClique&&AC){
+    if(ac.state=="suspended")ac.resume();
+    const s=ac.createBufferSource(),g=ac.createGain();
+    s.buffer=bufClique;g.gain.value=.8;
+    s.connect(g);g.connect(ac.destination);s.start();
+  }else{
+    const a=somAlt.cloneNode();a.volume=.8;a.play().catch(()=>{});
+  }
+}
+document.addEventListener("pointerdown",e=>{
+  if(e.target.closest("button")&&!e.target.closest(".slot"))clique();
+});
+carregarClique();
 function modal(tit,html,botoes){
   const fx=$("#fx");
   fx.querySelector(".fim")?.remove();
